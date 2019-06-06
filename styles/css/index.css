@@ -6325,6 +6325,7 @@ hr {
   font-size: 16px;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  background-color: #c0c0d8;
 }
 .docs-header h1 {
   color: #fff;
@@ -6511,7 +6512,7 @@ hr {
 }
 .docs-nav {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-  background-color: #1d365d;
+  background-color: #7878a8;
   border-color: rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
 }
