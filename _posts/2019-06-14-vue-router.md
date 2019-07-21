@@ -93,12 +93,7 @@ action里面是调用mutation的方法，调用好了之后修改状态。
 设置数据：this.$store.dispatch('increment', 100000);•获取数据：this.$store.state.num;
 
 
-slot插槽
---------------
-常用于组件调用中
 
-一般会在写组件代码时，适当的位置给插槽。便于页面在调用组件时，可以在组件内部写一些内容，并且能显示出来。
-< slot> < /slot>
 
 vue-resource
 -------------
@@ -111,3 +106,5 @@ Vue.use(VueResource)全局引用
 this.$http.get('/someUrl')
 
 this.$http.post('/someUrl', {foo: 'bar'})
+
+
