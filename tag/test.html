@@ -4,17 +4,30 @@
 <meta charset="utf-8">
 <title>菜鸟教程(runoob.com)</title>
 <script>
-var a =111;
-function test(){
-    alert(a);
-    var a=11;
-    function sub(){
-        alert(a);
-        
-    }
-    return sub;
-}
-test()();
+// var a =111;
+// function Ptest(){
+// }
+// Ptest.prototype.name="haha";
+// function Ctest(){
+
+// }
+// Ctest.prototype.name="lala";
+// Ctest.prototype=new Ptest();
+// var people = new Ctest();
+// alert(people.name)
+var animal = function(){
+            this.name='miao';
+            this.num=1;
+        }
+var cat = function(){
+           }
+           cat.prototype = new animal();
+         cat.prototype.info=function(){
+                alert(this.name+'---'+this.num)
+            }
+        var c = new cat();
+        c.info();
+
 </script>
 </head>
 <body>
