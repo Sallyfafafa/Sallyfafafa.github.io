@@ -10,9 +10,37 @@
 <div>111</div>
   </body>
   <script>
-    var a={"name":"tom","sex":"男","age":"24"};
-    var b='{"name":"Mike","sex":"女","age":"29"}';
-    var aToStr=JSON.stringify(a);
-    console.log(aToStr);
+    //考察json对象和字符串转换
+    // var a={"name":"tom","sex":"男","age":"24"};
+    // var b='{"name":"Mike","sex":"女","age":"29"}';
+    // var aToStr=JSON.stringify(a);
+    // console.log(aToStr);
+    // console.log(JSON.parse(b));
+
+    //js实现一个String类型的判断
+    // function str(n){
+    //   return n.constructor === String;
+    // }
+
+    //去除字符串的空格
+    // let str="we sdsd dfs kkkl";
+    // let str2=str.split(" ").join('');//分割再聚合
+    // console.log(str2)//或者使用replace删除匹配对应的正则表达式
+    // let str3=str.replace(/\s*/g,'')
+
+      //获取浏览器url的参数
+      // function getparem(){
+      //   let param= window.location.href.split('?')[1];
+      //   let arr = param.split('&');
+      //   let ret={};
+      //   for(i in arr){
+      //     ret[arr[i].split('=')[0]] = arr[i].split('=')[1];
+      //   }
+      //   return ret;
+      // }
+
+      //用javascript实现map的数据结构
+
+      console.log(plus.device.uuid);
   </script>
 </html>
