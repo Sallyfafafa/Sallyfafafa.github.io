@@ -7,25 +7,14 @@ permalink: /reference/
 * content
 {:toc}
 
-
-走向架构师之路
+前端haorooms资料库
 =====================
-[走向架构师之路](http://blog.csdn.net/cutesource/article/details/4901506)
+[前端资料搜索](http://resource.haorooms.com/)
 
-HTTP协议详解
+element
 =====================
-[HTTP协议详解](http://www.jmarshall.com/easy/http/)
+[vue-elementUI](https://element.eleme.cn/#/zh-CN/component/changelog)
 
-Axis 2.0的入门
+看云
 =====================
-[曹胜欢][http://blog.csdn.net/csh624366188/article/details/8362696](http://blog.csdn.net/csh624366188/article/details/8362696)
-
-[一线码农]
-=====================
-算法入门和分布式缓存入门
-[http://www.cnblogs.com/huangxincheng/archive/2011/11/14/2249046.html](http://www.cnblogs.com/huangxincheng/archive/2011/11/14/2249046.html)
-
-[雷霄骅]
-=====================
-视音频编解码技术学习方法
-[http://blog.csdn.net/leixiaohua1020/article/details/18893769](http://blog.csdn.net/leixiaohua1020/article/details/18893769)
+[看云前端资源文档整合](https://www.kancloud.cn/jikeytang/qq/87646)
