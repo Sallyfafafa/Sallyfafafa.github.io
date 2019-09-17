@@ -41,6 +41,51 @@
 
       //用javascript实现map的数据结构
 
-      console.log(plus.device.uuid);
+      // console.log(1+'1'+2);//112
+      // console.log(1+'1'+'2');//112
+      // console.log(1-'1'+'2');//02
+      // console.log(1+-'1'+'2');//02
+      // console.log('A'+1+'2');//A12
+      // console.log('A'-'A'+'2');//NaN2
+      // console.log(+'12' + 34 )//46 前置+号可看成字符串转为数字
+      // console.log(1+ +"2")//3
+
+      
+      window.onload = function () {
+    var count = 10;
+    var i = 0;
+ 
+    //往body中插入div
+    function appendChildren(text) {
+        var div = document.createElement("div");
+        div.innerText = text;
+        document.body.appendChild(div);
+    }
+ 
+    //测试requestAnimationFrame
+    function testRequestAnimationFrameBusy() {
+         var time = new Date();
+        console.log(time.getTime());
+        for (var i = 0; i < 10; i++) {
+            appendChildren(i);
+        }
+        time = new Date();
+        console.log(time.getTime());
+    }
+    
+    //测试requestIdleCallback
+    function testRequestIdleCallback() {
+        requestIdleCallback(function (obj) {
+            console.log(obj);
+            appendChildren('requestIdleCallback发生');
+        },{timeout:1000})
+ 
+    }
+ 
+    testRequestIdleCallback();
+    testRequestAnimationFrameBusy();
+};
+        
   </script>
 </html>
+
