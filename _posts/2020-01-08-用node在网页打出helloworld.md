@@ -1,7 +1,7 @@
 ---
 layout: post
 #标题配置
-title:  用node在网页打出HelloWorld
+title:  node的包管理器NPM、文件操作
 #时间配置
 date:   2020-01-09 14:33:00 +0800
 #大类配置
@@ -95,6 +95,42 @@ npm adduser
 ```
 之后，我们就可以在package.json所在目录下运行npm publish发布代码了。
 
+自己玩
+------
+
+安装模块：
+
+首先建一个文件夹名字叫my-project
+然后cd进去。`cd my-project`
+随意安装一个模块：`npm install colors`
+然后在根目录随便建一个.js文件，用`node 文件名`执行他
+
+自定义模块-分享/发布：
+
+自用：
+首先，先移除node_modules `rm -r node_modules`；
+然后配置package.json 
+```js
+{
+    "name":"my-color-project",
+    "version":"0.0.1",
+    "dependencies":{
+        "color":"0.5.0"
+    },
+    "privite":"true", //如果不想误发布自己的代码，可以加上这个属性
+    "main":"./index" //想让别人访问的暴露的api
+}
+```
+发布：`npm publish`
+
+注：如果失败，有两种情况
+1、403错误
+证明源没切换回npm：`npm config set registry http://registry.npmjs.org/`
+
+2、 401错误
+登录状态有误
+
+
 版本号
 ----
 x/y/z 主版本号、次版本号和补丁版本号。
@@ -114,3 +150,46 @@ NPM提供了很多命令，例如install和publish，使用npm help可查看所�
 使用npm cache clear可以清空NPM本地缓存，用于对付使用相同版本号发布新版本代码的人。
 
 使用npm unpublish <package>@<version>可以撤销发布自己发布过的某个版本代码。
+
+总结
+-----
+1、写代码前，规划目录结构
+2、稍大的程序规划成模块，更大的程序用包来组织模块
+3、使用node_modules和NODE_PATH来解耦包的使用方式和物理路径
+4、使用npm加入node生态圈
+5、想到心意的报名抢先到npm注册
+
+
+文件操作
+=======
+node不止能编代码，还能操作文件，可以查询文件，代码编译、操作文件。
+js语言自身只有字符串类型，而node对于文件操作，是二进制的方式。
+
+一个简单的文件拷贝
+-----
+
+小文件的拷贝： fs.writeFileSync(dst, fs.readFileSync(src));
+}
+
+使用fs.readFileSync从源路径读取文件内容，并使用fs.writeFileSync将文件内容写入目标路径。
+
+大文件：  fs.createReadStream(src).pipe(fs.createWriteStream(dst));
+
+边读边写
+
+buffer
+------
+数据块
+
+直接构造buffer：
+```js
+var bin = Buffer.from([ 0x68, 0x65, 'abcsdf1', 0x6c, 0x6f ]);
+for (const b of bin) {
+    console.log(b);//逐个打印转换成
+}
+```
+
+
+
+
+
