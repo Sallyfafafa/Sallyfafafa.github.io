@@ -3,11 +3,11 @@ layout: post
 #标题配置
 title:  用node在网页打出HelloWorld
 #时间配置
-date:   2020-01-06 14:33:00 +0800
+date:   2020-01-09 14:33:00 +0800
 #大类配置
-categories: Node介绍与Node模块
+categories: Node
 #小类配置
-tag: node.js
+tag: Node介绍与Node模块
 ---
 
 * content
