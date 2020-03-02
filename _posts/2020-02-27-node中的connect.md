@@ -10,8 +10,6 @@ categories: Node
 tag: Node中connect
 ---
 
-
-
 先用http实现一个静态网页的显示
 =========
 connect是一个基于http服务器的工具集，它提供了一种新的组织代码的方式来与请求，响应对象进行交互，这里称为中间件。
