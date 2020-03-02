@@ -159,3 +159,78 @@ module.exports = time;
 
 static中间件
 -----
+connect是允许中间件挂载到url上。
+static:是允许把任意一个url匹配到文件系统中的任意目录。
+
+ps：把url为:`/my-images`与文件目录`/images`对应起来
+```js
+server.use('/my-images', connect.static('/images'));
+```
+
+macAge: 代表一个资源在客户端缓存的时间。
+实用之处在于，对于不经常改动的资源，浏览器无需每次都去请求他。
+ps:将客户端所有的js文件都合并到一个文件中，并在这个文件名中加上修订号，设置maxAge做到永远缓存
+```js
+server.use('/js', connect.static('/path/to/bundles',{maxAge: 1000000000000}) );
+```
+hidden: 也是static接收的参数。若为true，connect就会托管那些文件名以（.）开始的UNIX系统中被隐藏的文件。
+```js
+server.use(connect.static('/path/to/resources', {hidden: true}) );
+```
+
+query中间件
+--------
+数据作为url的一部分以查询字符串的形式发送给服务器。
+url:'/index ? age = 18'
+使用query中间件获取数据
+```js
+server.use(connect.query);
+server.use(function(req, res) {
+    req.query.age // 18
+})
+```
+query中间件是在express中默认启用的。
+
+logger中间件
+-----
+诊断工具。它将请求与响应信息打印到终端。
+日志格式有：
+default，
+dev，
+short，
+tiny
+常用dev。
+初始化：`server.use(connect.logger('dev'))`
+dev会将请求的方法，页面路径以及响应状态码，处理时间输出。
+```js
+var connect = require('connect');
+connect.server( connect.logger , function(req, res){
+    res.writeHead(200);
+    res.end('Hello word');
+}).listen(3000);
+```
+logger自定义输出格式
+ps：若只记录请求方法和ip地址
+`server.use(connect.logger(':method :remote-addr'))`
+ps：通过动态的req和res记录头信息
+`server.use(connect.logger('type is :res[content-type], length is :res[content-length] and it took :resposon-time ms'))`
+
+cookieParser中间件
+------
+不用手动解析，不用正则表达式。
+直接:`server.use(connect.cookieParser())`
+```js
+server.use(function(req, res, next){
+    req.cookie.secret1; // 'value'
+})
+```
+
+会话session
+------
+见`/connect-website/session`文件，实现用户的登录登出，在服务器未关闭状态下保存登录状态。但是重启后重新登录。
+这里的数据，存储在了内存，进程退出，数据便丢失。
+
+Redis session
+-----
+通过redis这个既小又快的数据库，可以持久化存储session数据。这个放到后边学。
+
