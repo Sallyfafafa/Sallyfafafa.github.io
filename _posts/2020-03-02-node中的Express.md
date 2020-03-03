@@ -143,7 +143,29 @@ module.exports = function search (query, fn) {
 
 环境设置
 -----
+对模板进行缓存
+```js
+app.configure('production', function(){
+    app.enable('view cache'); 
+    //相当于 app.set('view cache', true);
+})
+```
+使用`app.enabled`查看标志是否启用。
+对应的方法还有：`app.disable`,`app.disabled`
 
+环境变量NODE_ENV设为production时，上边我们设置的回调函数就会执行，否则，默认执行：
+```js
+app.configure('development', function(){
+    ·····
+})
+```
+执行production环境，终端输入`NODE_ENV=production node server`
+
+模板引擎
+------
+使用步骤，就如上边的一个完整代码里面的：
+1、 先安装ejs`npm install ejs`
+2、 声明`app.engine('html', require('ejs').renderFile)` 要将EJS模板引擎映射到“ .html”文件
 
 错误处理
 -----
@@ -164,4 +186,76 @@ app.err(function(err, req, res){
 
 ```
 
+快捷方法
+=========
 
+request对象的扩展
+-----
+
+`req.get('http请求标头字段')`
+以函数的方式获取头部信息，不区分大小写。别名`req.header('')`
+ps： 
+```js
+req.get('Content-Type')
+// => "text/plain"
+
+req.get('content-type')
+// => "text/plain"
+
+req.get('Something')
+// => undefined
+```
+
+`req.accepts('html')`
+分析请求中的accepts头信息，返回是Boolean类型。
+
+`req.is('text/html')`
+检查Content-text头信息。匹配的话就返回匹配的内容，匹配不到就返回false
+
+
+response对象的扩展
+----
+`res.header('content-type')`
+检查对应参数来判断头信息是否已经在response上设置了
+可以接收多个参数。
+
+`res.render(view [，locals] [，callback])` 
+
+[]内是可选的。
+view，是一个字符串，它是视图文件来渲染的文件路径。
+locals，其属性定义视图的局部变量的对象。
+callback，一个回调函数。如果提供了该方法，则该方法将同时返回可能的错误和呈现的字符串，但不会执行自动响应。发生错误时，该方法在next(err)内部调用。
+
+ps：
+```js
+// pass a local variable to the view
+res.render('user', { name: 'Tobi' }, function (err, html) {
+  // ...
+    res.send(html)
+})
+```
+
+`res.send([body])`
+
+发送http响应
+```js
+res.send(Buffer.from('whoop'))
+res.send({ some: 'json' })
+res.send('<p>some html</p>')
+```
+`res.sendFile（路径[，选项] [，fn]）`
+在给定的位置传输文件path。
+其余详细内容见：http://expressjs.com/en/4x/api.html#req
+
+路由
+======
+相关内容使用见：http://expressjs.com/en/4x/api.html#router
+
+```js
+app.get('/user', (req, res, next)=>{ res.send('user用户'); next()});
+app.get('/user/:id', (req, res) =>{ res.send(res.params)}); // 动态路由
+```
+
+新建一个express APP
+----
+在express官网的入门教程，跟着就可以一步步的建立一个小型app。
