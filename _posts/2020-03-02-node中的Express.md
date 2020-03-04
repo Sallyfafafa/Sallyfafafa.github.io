@@ -189,6 +189,15 @@ app.err(function(err, req, res){
 快捷方法
 =========
 
+express.bodyParser()
+------
+body-parser实现的要点如下：
+
+处理不同类型的请求体：比如text、json、urlencoded等，对应的报文主体的格式不同。
+处理不同的编码：比如utf8、gbk等。
+处理不同的压缩类型：比如gzip、deflare等。
+其他边界、异常的处理。
+
 request对象的扩展
 -----
 
