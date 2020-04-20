@@ -65,9 +65,12 @@ server.listen(3000);
 由于有的图片我放的不是jpg，代码会把不是jpg的图片给过滤掉。
 
 文件目录：（各类型图片应有尽有）
-![](https://cdn.weipaitang.com/static/2020022762b88c3d-623d-8c3d623d-485e-147c03c7cfc4-W460H398)
+
+![b](https://raw.githubusercontent.com/Sallyfafafa/Sallyfafafa.github.io/master/images/1587351879901.png)
+
 实现的网站样子：(略微简陋)
-![](https://cdn.weipaitang.com/static/2020022735389fdb-763a-9fdb763a-ecaf-35ed393c99c6-W898H1288)
+
+![b](https://raw.githubusercontent.com/Sallyfafafa/Sallyfafafa.github.io/master/images/1587351911389.png)
 
 用connect实现一个静态网页的显示
 ======

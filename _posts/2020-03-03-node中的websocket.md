@@ -106,9 +106,10 @@ F12可以看出一些不一样。
 普通的http请求就是：headers，preview，response，Timing。
 而我们这个websocket省略了：preview，response，用Messages来代替。
 
-![](https://cdn.weipaitang.com/static/20200304be324403-eacd-4403eacd-d869-4451cdbb0c8a-W1500H988)
+![b](https://raw.githubusercontent.com/Sallyfafafa/Sallyfafafa.github.io/master/images/1587351945930.png)
 
-![](https://cdn.weipaitang.com/static/202003048729e8d0-1f9c-e8d01f9c-62f1-171c1af9d870-W1486H1148)
+
+![b](https://raw.githubusercontent.com/Sallyfafafa/Sallyfafafa.github.io/master/images/1587351966043.png)
 状态代码：101表示协议切换
 
 重点请求首部的意义：
