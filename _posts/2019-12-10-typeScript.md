@@ -15,6 +15,17 @@ tag: requestAnimation
 
 一下笔记内容  全部摘抄至[TypeScript](https://www.tslang.cn/docs/handbook/basic-types.html)
 
+
+环境配置
+====
+安装
+----
+```
+cnpm install typescript -g
+```
+
+安装好，就可以通过`tsc`命令，去
+
 声明类型
 =======
 
@@ -93,7 +104,7 @@ let strLength1: number = (someValue1 as string).length; // tsx只支持这种写
 接口
 =====
 
-可选属性
+可选属性 ？
 ------
 
 ```js
