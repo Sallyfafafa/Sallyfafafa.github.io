@@ -3,7 +3,7 @@ layout: post
 #标题配置
 title:  wxs中使用requestAnimation
 #时间配置
-date:   2019-11-05 10:33:00 +0800
+date:   2020-11-05 10:33:00 +0800
 #大类配置
 categories: 微信小程序
 #小类配置

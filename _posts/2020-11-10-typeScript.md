@@ -3,7 +3,7 @@ layout: post
 #标题配置
 title:  ts学习
 #时间配置
-date:   2019-12-10 10:33:00 +0800
+date:   2020-11-10 10:33:00 +0800
 #大类配置
 categories: TypeScript
 #小类配置
