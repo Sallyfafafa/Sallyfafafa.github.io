@@ -13,7 +13,7 @@ tag: requestAnimation
 * content
 {:toc}
 
-一下笔记内容  全部摘抄至[TypeScript](https://www.tslang.cn/docs/handbook/basic-types.html)
+[TypeScript](https://www.tslang.cn/docs/handbook/basic-types.html)
 
 
 环境配置
