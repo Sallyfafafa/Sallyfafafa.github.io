@@ -381,3 +381,23 @@ enum BooleanLikeHeterogeneousEnum {
 }
 ```
 
+高级类型
+=========
+Omit
+----
+取除了 `name1` 外的其余属性。
+```ts
+Omit<{ name: string; name1: string; name2: string }, 'name1'> 
+```
+
+获得可用属性：`name`，`name2`
+
+
+Pick
+----
+在 `name`，`name1` ，`name2`中取 `name1`。
+
+```ts
+Pick<{ name: string; name1: string; name2: string }, 'name1'> 
+```
+获得可用属性：`name1`
