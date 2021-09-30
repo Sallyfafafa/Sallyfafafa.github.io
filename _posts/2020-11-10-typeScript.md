@@ -5,9 +5,9 @@ title:  ts学习
 #时间配置
 date:   2020-11-10 10:33:00 +0800
 #大类配置
-categories: TypeScript
+categories: 语言学习
 #小类配置
-tag: requestAnimation
+tag: TypeScript
 ---
 
 * content
