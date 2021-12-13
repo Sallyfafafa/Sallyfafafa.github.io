@@ -1,9 +1,9 @@
 ---
 layout: post
 #标题配置
-title:  node 对 xlsx表格来回转换
+title: node 对 xlsx表格来回转换
 #时间配置
-date:   2021-12-13 09:52:00 +0800
+date: 2021-12-13 09:52:00 +0800
 #大类配置
 categories: Node
 #小类配置
